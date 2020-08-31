@@ -191,8 +191,8 @@
                   <v-btn :disabled="!form.agreementOne || !form.agreementTwo"
                          :loading="loading"
                          class="reg-btn"
-                         
-                         
+
+
 
                         type="submit">
                     <span class="white--text">Зарегистрироваться</span>
@@ -276,6 +276,7 @@
                   this.$refs.observer.reset();
                   this.$store.commit('alert', {message: response.data.success, });
                   this.$fdService.reset(this.form);
+                  this.form.year = 2020;
                   this.form.phoneCode = '+375';
                 })
                 .finally(() => {
