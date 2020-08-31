@@ -13,16 +13,48 @@ export default new Vuex.Store({
     goods: goods.goods,
     counts: [
       {
+        text: '1шт',
+        value: '1шт'
+      },
+      {
+        text: '2шт',
+        value: '2шт'
+      },
+      {
+        text: '3шт',
+        value: '3шт'
+      },
+      {
         text: '4шт',
         value: '4шт'
+      },
+      {
+        text: '5шт',
+        value: '5шт'
       },
       {
         text: '6шт',
         value: '6шт'
       },
       {
+        text: '7шт',
+        value: '7шт'
+      },
+      {
         text: '8шт',
         value: '8шт'
+      },
+      {
+        text: '9шт',
+        value: '9шт'
+      },
+      {
+        text: '10шт',
+        value: '10шт'
+      },
+      {
+        text: '11шт',
+        value: '11шт'
       },
       {
         text: '12шт',
