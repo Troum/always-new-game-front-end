@@ -48,10 +48,10 @@ export default {
 
 <style>
   body {
-    background-color: #292D7A;
+    background-color: #213952!important;
     overflow: hidden;
   }
   .bodyb {
-    background-color: #292D7A;
+    background-color: #213952;
   }
 </style>
