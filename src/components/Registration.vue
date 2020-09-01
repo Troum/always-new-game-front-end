@@ -1,5 +1,5 @@
 <template>
-    <v-row class="pa-0 ma-0 d-flex flex-row justify-center ">
+    <v-row class="pa-0 ma-0 d-flex flex-row justify-center " style="z-index: 10">
       <v-col cols="12" sm="10" md="10" lg="11" xl="10" class="regform" >
         <v-card flat dark="" color="transparent" >
           <h1 class="d-flex d-sm-none h1-mob">Регистрация</h1>
@@ -133,8 +133,8 @@
                     </div>
                   </validation-provider>
                 </v-col>
-                <template v-for="item in quantity">
-                  <v-col :key="item"
+                <template v-for="(item, i) in form.good">
+                  <v-col :key="i"
                          class="pt-0 mt-n3" cols="12" lg="8">
                     <v-row class="ma-0 pa-0">
                       <v-col cols="12" class="ma-0 pa-0 mt-n2">
@@ -145,8 +145,8 @@
                       <v-col class="pa-0" cols="12" sm="10">
                         <validation-provider name="Наименование акционного товара" rules="required" v-slot="{ errors }">
                           <v-select outlined dense :error-messages="errors"
-                                    @change="form.good[item - 1].text = $store.getters.goods[item - 1].text"
-                                    v-model="form.good[item - 1].code"
+                                    item-value="text"
+                                    v-model="item.text"
                                     :items="$store.getters.goods"></v-select>
                         </validation-provider>
                       </v-col>
@@ -158,7 +158,8 @@
                         </v-row>
                         <validation-provider name="Количество акционного товара" rules="required" v-slot="{ errors }">
                           <v-select outlined dense :error-messages="errors"
-                                    v-model="form.good[item - 1].count"
+                                    item-value="text"
+                                    v-model="item.count"
                                     :items="$store.getters.counts"></v-select>
                         </validation-provider>
                       </v-col>
@@ -212,7 +213,11 @@
     name: 'Home',
     data() {
       return {
-        quantity: 1,
+        quantity: [Math.random()],
+        goods: [],
+        counts: [],
+        actionGood: null,
+        actionCount: null,
         mMenu: false,
         loading: false,
         tooltip: false,
@@ -235,17 +240,12 @@
           good: [
             {
               text: null,
-              code: null,
-              count: null
+              count: null,
+              code: '000'
             }
           ],
           agreementOne: false,
           agreementTwo: false,
-        },
-        good: {
-          text: null,
-          code: null,
-          count: null
         }
       }
     },
@@ -266,8 +266,11 @@
         this.mMenu = !this.mMenu;
       },
       addGood() {
-        this.form.good.push(this.good);
-        this.quantity++;
+        this.form.good.push({
+          text: null,
+          count: null,
+          code: '0000'
+        });
       },
       submit(){
         this.loading = true;
@@ -278,6 +281,13 @@
                   this.$fdService.reset(this.form);
                   this.form.year = 2020;
                   this.form.phoneCode = '+375';
+                  this.form.good = [
+                    {
+                      text: null,
+                      count: null,
+                      code: '000'
+                    }
+                  ]
                 })
                 .finally(() => {
                   this.loading = false
