@@ -39,8 +39,9 @@ export default {
 .reg-container {
   background: url(../assets/des3.svg) center/96.3% no-repeat;
   margin-top: -9.5rem;
-  z-index: 1!important;
-  margin-bottom: -10.2rem;
+  z-index: 1;
+  margin-bottom: -16.4rem;
+  padding-bottom: 13rem;
 }
 .form_bg {
     margin-bottom: -60rem;

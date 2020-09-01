@@ -43,23 +43,23 @@
      height: 44vw;
      z-index: 1;
      margin-top: -20rem;
-     padding-top: 10rem;
+    /*  padding-top: 10rem; */
      padding-bottom: 10rem!important;
      margin-bottom: 10rem!important;
      
   }
   .foo-pic {
     margin-top: .9rem;
-     padding-bottom: 0rem!important;
+     /* padding-bottom: 0rem!important;
      padding-top: 0px!important;
-     margin-bottom: 10rem!important;
+     margin-bottom: 10rem!important; */
      
   }
   .foo-pic-mob {
     margin-top: -60vw;
     min-width: 102vw;
     margin-left: -8.6vw;
-    bottom: -2rem;
+    bottom: 1rem;
   }
   @media screen and (max-width: 700px) {
     .foo-screen {
