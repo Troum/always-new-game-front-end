@@ -287,7 +287,8 @@
                       count: null,
                       code: '000'
                     }
-                  ]
+                  ];
+                  this.$refs.observer.reset()
                 })
                 .finally(() => {
                   this.loading = false
