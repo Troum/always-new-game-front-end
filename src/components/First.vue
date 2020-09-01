@@ -40,7 +40,4 @@
 .m1-cont {
     height: inherit;
 }
-.m1 {
-    
-}
 </style>

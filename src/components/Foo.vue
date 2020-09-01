@@ -49,7 +49,7 @@
      
   }
   .foo-pic {
-    margin-top: 0rem;
+    margin-top: .9rem;
      padding-bottom: 0rem!important;
      padding-top: 0px!important;
      margin-bottom: 10rem!important;
@@ -60,8 +60,6 @@
     min-width: 102vw;
     margin-left: -8.6vw;
     bottom: -2rem;
-  }
-  .foo-mob-cont {
   }
   @media screen and (max-width: 700px) {
     .foo-screen {

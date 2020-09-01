@@ -23,7 +23,5 @@
 </script>
 
 <style>
- .desctop {
- }
 </style>
 
